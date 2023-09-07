@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <ctime>
 
 using namespace std;
 
@@ -14,6 +15,7 @@ private:
 	int attackPoints;
 	int defensePoints;
 	bool isAlive;
+	time_t lastSaveTime;
 
 public:
 	GameCharacter(const string& name, int maxHealth, int attackPoints, int defensePoints);

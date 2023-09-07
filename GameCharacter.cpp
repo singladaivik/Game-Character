@@ -66,13 +66,14 @@ ostream& operator<<(ostream& os, const GameCharacter& character) {
 	return os;
 } 
 
+
 void GameCharacter::displayDateTimeOfLastSave() const{
-	time_t lastSaveTime = getLastSaveTime();
+	time_t lastSaveTime = lastSaveTime;
 	cout << "Last Saved: " << ctime(&lastSaveTime);
 }
 
 void GameCharacter::displayTimeSinceLastSave() const {
-	time_t lastSaveTime = getLastSaveTime();
+	time_t lastSaveTime = lastSaveTime;
 	time_t currentTime = time(nullptr);
 	double timeDiff = difftime(currentTime, lastSaveTime);
 	cout << "Time Since Last Save: " << timeDiff << " seconds" << endl;
