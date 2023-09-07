@@ -28,6 +28,7 @@ public:
 	void attack (GameCharacter& target);
 
 	void displayDateTimeOfLastSave() const;
+	void displayTimeSinceLastSave() const;
 
 	GameCharacter operator+(const GameCharacter& other) const;
 	bool operator>(const GameCharacter& other) const;

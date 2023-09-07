@@ -71,6 +71,13 @@ void GameCharacter::displayDateTimeOfLastSave() const{
 	cout << "Last Saved: " << ctime(&lastSaveTime);
 }
 
+void GameCharacter::displayTimeSinceLastSave() const {
+	time_t lastSaveTime = getLastSaveTime();
+	time_t currentTime = time(nullptr);
+	double timeDiff = difftime(currentTime, lastSaveTime);
+	cout << "Time Since Last Save: " << timeDiff << " seconds" << endl;
+}
+
 void GameCharacter::saveToFile(const string& filename) const {
 	ofstream outFile(filename);
 	if (outFile.fail()) {
