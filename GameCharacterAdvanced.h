@@ -27,6 +27,8 @@ public:
 	void takeDamage(int damage);
 	void attack (GameCharacter& target);
 
+	void displayDateTimeOfLastSave() const;
+
 	GameCharacter operator+(const GameCharacter& other) const;
 	bool operator>(const GameCharacter& other) const;
 	bool operator<(const GameCharacter& other) const;
@@ -35,6 +37,7 @@ public:
 
 	void saveToFile(const string& filename) const;
 	void loadFromFile(const string& filename);
+
 };
 
 #endif

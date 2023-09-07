@@ -1,5 +1,7 @@
 #include "GameCharacterAdvanced.h"
 #include <fstream>
+#include <iostream>
+#include <ctime>
 
 using namespace std;
 
@@ -62,6 +64,11 @@ ostream& operator<<(ostream& os, const GameCharacter& character) {
 	       "Defense: " << character.defensePoints << "\n" << "Status: " << (character.isAlive ?
 		       "Alive" : "Defeated") << endl;
 	return os;
+} 
+
+void GameCharacter::displayDateTimeOfLastSave() const{
+	time_t lastSaveTime = getLastSaveTime();
+	cout << "Last Saved: " << ctime(&lastSaveTime);
 }
 
 void GameCharacter::saveToFile(const string& filename) const {
